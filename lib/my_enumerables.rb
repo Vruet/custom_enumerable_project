@@ -24,6 +24,14 @@ module Enumerable
       length
     end
   end
+
+  def my_inject(initial_value = 0)
+    total = initial_value
+    my_each do |item|
+      total = yield total, item
+    end
+    total
+  end
 end
 
 # Contains recreated array methods
