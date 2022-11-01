@@ -44,6 +44,14 @@ module Enumerable
     my_each { |item| return false if yield item }
     true
   end
+
+  def my_select
+    matches = []
+    my_each do |item|
+      matches.push(item) if yield item
+    end
+    matches
+  end
 end
 
 # Contains recreated array methods
