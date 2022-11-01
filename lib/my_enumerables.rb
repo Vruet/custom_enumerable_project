@@ -32,6 +32,13 @@ module Enumerable
     end
     total
   end
+
+  def my_map
+    my_each_with_index do |item, index|
+      self[index] = yield item
+    end
+    self
+  end
 end
 
 # Contains recreated array methods
