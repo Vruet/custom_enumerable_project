@@ -39,6 +39,11 @@ module Enumerable
     end
     self
   end
+
+  def my_none?
+    my_each { |item| return false if yield item }
+    true
+  end
 end
 
 # Contains recreated array methods
